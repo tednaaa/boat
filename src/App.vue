@@ -1,20 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { invoke } from '@tauri-apps/api/tauri';
+import { useRedisKeys } from "./core/redis";
 
-const keys = ref([]);
-
-const getKeys = async () => {
-	keys.value = await invoke('fetch_redis_keys');
-	console.log(keys.value);
-};
+const { redisKeys } = useRedisKeys();
 </script>
 
 <template>
 	<div>
-		<button @click="getKeys">Fetch Redis Keys</button>
 		<ul>
-			<li v-for="key in keys" :key="key">{{ key }}</li>
+			<li v-for="key in redisKeys" :key="key">{{ key }}</li>
 		</ul>
 	</div>
 </template>
