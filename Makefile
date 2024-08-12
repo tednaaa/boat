@@ -1,0 +1,2 @@
+watch:
+	@cargo tauri dev
