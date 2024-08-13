@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { useRedisKeys } from "./core/redis";
-
-const { redisKeys } = useRedisKeys();
+import RedisKeyInfo from "./redis/components/RedisKeyInfo.vue";
+import RedisKeys from "./redis/components/RedisKeys.vue";
 </script>
 
 <template>
 	<div>
-		<ul>
-			<li v-for="key in redisKeys" :key="key">{{ key }}</li>
-		</ul>
+		<RedisKeys />
+		<RedisKeyInfo />
 	</div>
 </template>
