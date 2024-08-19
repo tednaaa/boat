@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import RedisKeyInfo from "./redis/components/RedisKeyInfo.vue";
-import RedisKeys from "./redis/components/RedisKeys.vue";
+import { RouterView } from "vue-router";
 </script>
 
 <template>
-	<div>
-		<RedisKeys />
-		<RedisKeyInfo />
-	</div>
+	<RouterView />
 </template>
